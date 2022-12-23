@@ -2,7 +2,14 @@
   <div class="conatiner p-3">
     <h1>Headlines</h1>
     <div class="row mt-3">
-        
+        <NewsCard
+            v-for="news in allNewsObjects" :key="news.id"
+                :id="news.id"
+                :date="news.publishedAt"
+                :title="news.title" 
+                :author="news.author"
+                :description="news.description"
+        />
     </div>
   </div>
   
@@ -16,11 +23,17 @@ import NewsService from "../service/NewsService"
     components:{
         NewsCard
     },
-   
-    async getNews(){
+
+    data(){
+        return{
+            allNewsObjects :[]
+        }
+    }
+   ,
+    async mounted(){
         let result = await NewsService.getNews()
         console.log(result.data.articles)
-        //this.allNewsObjects = result.data.articles
+        this.allNewsObjects = result.data.articles
     }
  }
 </script>
