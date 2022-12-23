@@ -1,26 +1,21 @@
 <template>
-  <div class="container">
-    <nav class="navbar fixed-top navbar-light bg-light">
+  <div class="container-fluid">
+    <nav class="navbar navbar-light navbar-expand-md bg-light">
     <div class="container-fluid">
     <a class="navbar-brand" href="#">News Application</a>
    
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <li class="nav-item home">
+          <a class="nav-link active" aria-current="page" href="#" id="home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="#">Recently Visited</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
+        
       </ul>
     </div>
   </div>
@@ -35,5 +30,13 @@ export default {
 </script>
 
 <style>
+
+#home{
+  border-right: 2px rgb(109, 108, 108) solid;
+}
+
+.navbar a .nav-brand{
+  color: #A555EC;
+}
 
 </style>
