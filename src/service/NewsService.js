@@ -3,8 +3,14 @@ import axios from "axios";
 class NewsService{
 
     async getNews(){
-        return axios.get();
+        return axios.get()
+        .then((res) => {
+            return res.data
+        }).catch((err) => {
+            throw err
+        })
     }
+
 
 
 }

@@ -43,7 +43,7 @@ export default {
 
 .card{
     box-shadow: 0 0 20px 8px #d0d0d0;
-   
+    
 }
 .card .card-text{
     font-size: 0.8rem;
