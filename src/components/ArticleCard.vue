@@ -1,134 +1,65 @@
 <template>
-  <main>
-  <article>
-    <div class="article-header">
-      <div class="headline">
-        
-        <h1>{{title}}</h1>
-        <div class="byline">{{author}}</div>
-      </div>
-      <div class="image" v-bind:style="{ 'background-image': 'url(' + {{imageUrl}} + ')' }"></div>
-    </div>
-    <div class="article-text">
-      <p class="first">{{content}}</p>
-    </div>
-  </article>
-</main>
+  
+
+<div class="container col-md-8 box">
+  <h3 class="title">{{title}}</h3>
+  <p class="author">by <B>Tharushi Chamalsha</B></p>
+  <img src="../assets/grafiti-urban-pavement-background-texture-grunge.jpg" alt="">
+  <p class="content mt-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+  <p class="content mt-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+</div>
 </template>
 
 <script>
 export default {
     name:'ArticleCard',
-    props:{
+    props: {
         id:Number,
         date: String,
         title: String,
-        description: String,
-        imageUrl:String,
-        content:String,
-        author:String
+        content: String,
+        imageUrl:String
     },
+    
 }
 </script>
 
 <style>
 /* Scroll down for CSS Grid rules */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&family=Roboto+Slab:wght@500&family=Sevillana&display=swap');
 
-html {
-  height: 100%;
-  box-sizing: border-box;
+.box img{
+    border-radius: 5px;
+    width: 80%;
 }
 
-body {
+
+.container {
   position: relative;
-  min-height: 100%;
-  font-family: "Montserrat", sans-serif;
-  padding-bottom: 8rem;
-  margin: -10px -10px 0 -10px;
-  background-color: snow;
-}
-
-article {
-  height: 100%;
-}
-
-.image {
-  background-size: cover;
-}
-
-.headline {
-  background-color: #000000;
-  color: #c7c7c7;
-  padding: 0.75rem;
+  border-radius: 20px;
+  padding: 40px;
+  box-sizing: border-box;
+  background: #ecf0f3;
+  box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+  align-items: center;
   text-align: center;
-  box-shadow: 0 1.2em 0 0.75em;
-}
-
-.headline p {
-  font-size: 1.25em;
-}
-.headline h1 {
-  margin-top: -0.25em;
-  margin-bottom: 0.5em;
-  font-size: 3em;
-  text-transform: uppercase;
-  line-height: 1;
-  text-shadow: 3px 3px 0px #3e2723;
-}
-
-.byline {
-  margin: 0 1rem 1rem 1rem;
-  font-family: "Libre Baskerville", serif;
-  font-style: italic;
-  letter-spacing: -0.2px;
-}
-
-.article-text {
-  margin: -1em auto;
-  padding: 0.5em 1em;
-  max-width: 620px;
-  font-size: 1em;
-  line-height: 1.25;
-  color: #3e2723;
-}
-
-.first::first-letter {
-  float: left;
-  margin: 0 0.2em 0 0;
-  color: saddlebrown;
-  font-size: 4em;
-  font-family: "Libre Baskerville", serif;
-  font-weight: 600;
-  text-shadow: 2px 2px 0px #3e2723;
-}
-
-footer {
+  justify-content: center;
+  place-items: center;
   position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  background-color: #c7c7c7;
-  color: #000000;
-  text-align: center;
+    overflow-y: scroll;
 }
 
-/* CSS Grid starts here! */
-
-.article-header {
-  display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
-  grid-template-rows: 2fr 1fr 1fr 1fr;
+.box h3{
+    font-family: 'Roboto Slab', serif;
+}
+.box p{
+    font-family: 'Sevillana', cursive;
 }
 
-.image {
-  grid-column: 1 / -1;
-  grid-row: 1 / 3;
+.box .content{
+    text-align: justify;
+    font-family: 'Quicksand', sans-serif;
+    
 }
-.headline {
-  grid-column: 2 / 3;
-  grid-row: 2 / 4;
-  z-index: 100;
-}
-
 </style>

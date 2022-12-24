@@ -3,12 +3,14 @@
     <h1>Headlines</h1>
     <div class="row mt-3">
         <NewsCard
-            v-for="news in allNewsObjects" :key="news.id"
+            v-for="news in allNewsObjects" 
+                :key="news.id"
                 :id="news.id"
                 :date="news.publishedAt"
                 :title="news.title" 
                 :author="news.author"
                 :description="news.description"
+                :articleObject="news"
         />
     </div>
   </div>
@@ -31,9 +33,15 @@ import NewsService from "../service/NewsService"
     }
    ,
     async mounted(){
-        let result = await NewsService.getNews()
-        console.log(result.data.articles)
-        this.allNewsObjects = result.data.articles
+        // let result = await NewsService.getNews()
+        // console.log(result.data)
+        // this.allNewsObjects = result.data.articles
+        NewsService.getNews().then(res => {
+            this.allNewsObjects = res.articles
+            console.log(res);
+        }).catch(err => {
+            console.log(err);
+        })
     }
  }
 </script>
