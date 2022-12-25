@@ -12,9 +12,14 @@
         <li class="nav-item home">
           <a class="nav-link active" aria-current="page" href="#" id="home">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Recently Visited</a>
+        <li class="nav-item home">
+          <a class="nav-link" href="../views/HomeView.vue">Recently Visited</a>
         </li>
+        
+          <li class="nav-item" >
+            <router-link to="/sources" :style="{ textDecoration: 'none' }"><a class="nav-link" >Sources</a></router-link>
+          </li>
+        
         
       </ul>
     </div>
@@ -31,10 +36,15 @@ export default {
 
 <style>
 
-#home{
+.home{
   border-right: 2px rgb(109, 108, 108) solid;
 }
-
+a{
+  border: none;
+}
+.nav-link {
+  text-decoration: none !important;
+}
 .navbar a .nav-brand{
   color: #A555EC;
 }

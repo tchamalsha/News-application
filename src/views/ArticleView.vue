@@ -6,6 +6,7 @@
                     :author="selectedArticle.author"
                     :content="selectedArticle.content"
                     :url="selectedArticle.url"
+                    :imageUrl="selectedArticle.imageUrl"
         />
     </div>
     
@@ -20,11 +21,7 @@ import ArticleCard from "../components/ArticleCard.vue"
 
 export default {
     name: "ArticleView",
-    data() {
-        return {
-            imageUrl: null,
-        };
-    },
+    
     computed: {
     selectedArticle() { 
         console.log("work") 

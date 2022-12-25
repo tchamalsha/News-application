@@ -1,31 +1,25 @@
 <template>
   <div class="conatiner p-3">
-    <h1>Headlines</h1>
+    <h1>Top Sources</h1>
     <div class="row mt-3">
-        <NewsCard
+        <SourceCard
             v-for="news in allNewsObjects" 
                 :key="news.id"
-                :id="news.id"
-                :date="news.publishedAt"
-                :title="news.title" 
-                :author="news.author"
+                :name="news.name"
                 :description="news.description"
-                :content="news.content"
-                :imageUrl="news.urlToImage"
                 :url="news.url"
         />
     </div>
   </div>
-  
 </template>
 
 <script>
-import NewsCard from "../components/NewsCard.vue";
-import NewsService from "../service/NewsService"
- export default{
-    name:'HomeView',
+import SourceCard from "../components/SourceCard.vue";
+import NewsService from '../service/NewsService';
+export default {
+    name:'SourceView',
     components:{
-        NewsCard
+       SourceCard
     },
 
     data(){
@@ -38,12 +32,19 @@ import NewsService from "../service/NewsService"
         // let result = await NewsService.getNews()
         // console.log(result.data)
         // this.allNewsObjects = result.data.articles
-        NewsService.getNews().then(res => {
-            this.allNewsObjects = res.articles
-            console.log(res);
+        NewsService.getNewsSources()
+        .then(res => {
+            this.allNewsObjects = res.sources
+            console.log(res.sources);
         }).catch(err => {
             console.log(err);
         })
     }
- }
+    
+
+}
 </script>
+
+<style>
+
+</style>
