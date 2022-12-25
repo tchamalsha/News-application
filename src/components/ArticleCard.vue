@@ -3,11 +3,10 @@
 
 <div class="container col-md-8 box">
   <h3 class="title">{{title}}</h3>
-  <p class="author">by <B>Tharushi Chamalsha</B></p>
-  <img src="../assets/grafiti-urban-pavement-background-texture-grunge.jpg" alt="">
-  <p class="content mt-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-  <p class="content mt-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-
+  <p class="author">by <B>{{ author }}</B></p>
+  <img v-bind:src="imageUrl" alt="Image">
+  <p class="content mt-4">{{ content }}</p>
+  <a v-bind:href="url" target="_blank">See more</a>
 </div>
 </template>
 
@@ -19,7 +18,9 @@ export default {
         date: String,
         title: String,
         content: String,
-        imageUrl:String
+        imageUrl:String,
+        author:String,
+        url:String
     },
     
 }
@@ -31,7 +32,7 @@ export default {
 
 .box img{
     border-radius: 5px;
-    width: 80%;
+    width: 60%;
 }
 
 

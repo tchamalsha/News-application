@@ -10,7 +10,9 @@
                 :title="news.title" 
                 :author="news.author"
                 :description="news.description"
-                :articleObject="news"
+                :content="news.content"
+                :imageUrl="news.urlToImage"
+                :url="news.url"
         />
     </div>
   </div>

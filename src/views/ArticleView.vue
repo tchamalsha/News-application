@@ -1,8 +1,12 @@
 <template>
 
-<div class="article ">
+<div class="article">
     <div class="row justify-content-center">
-        <ArticleCard :title="selectedArticle.title"/>
+        <ArticleCard :title="selectedArticle.title"
+                    :author="selectedArticle.author"
+                    :content="selectedArticle.content"
+                    :url="selectedArticle.url"
+        />
     </div>
     
 </div>
@@ -13,18 +17,20 @@
 <script>
 import NewsService from "../service/NewsService"
 import ArticleCard from "../components/ArticleCard.vue"
+
 export default {
     name: "ArticleView",
     data() {
         return {
             imageUrl: null,
-            selectedArticle:[]
         };
     },
     computed: {
-    selectedArticle() {     
-      this.selectedArticle= this.$route.params.selectedArticle;
-      console.log(this.selectedArticle);
+    selectedArticle() { 
+        console.log("work") 
+        console.table(this.$route.query)    
+        return this.$route.query;
+      
     }
   },
     components: { ArticleCard },
@@ -46,7 +52,6 @@ export default {
   place-items: center;
   overflow: hidden;
   margin-top: 5px;
-  position: fixed;
 }
 
 
