@@ -10,10 +10,10 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item home">
-          <a class="nav-link active" aria-current="page" href="#" id="home">Home</a>
+          <router-link to="/" :style="{ textDecoration: 'none' }"><a class="nav-link" >Home</a></router-link>
         </li>
         <li class="nav-item home">
-          <a class="nav-link" href="../views/HomeView.vue">Recently Visited</a>
+          <router-link to="/recently-visited" :style="{ textDecoration: 'none' }"><a class="nav-link" >Recently Visited</a></router-link>
         </li>
         
           <li class="nav-item" >
