@@ -20,10 +20,10 @@ class NewsService{
         })
     }
 
-    async getSelectedSourceNews(name){
-        return axios.get('/top-headlines?country=us&apiKey=44f5311380fd478ab71c72fcb5b7b717')
+    async getSearchedNews(searchedText){
+        return axios.get(`/top-headlines?q=${searchedText}&apiKey=44f5311380fd478ab71c72fcb5b7b717`)
         .then((res) => {
-            return res.data.articles.source.name=name
+            return res.data
         }).catch((err) => {
             throw err
         })

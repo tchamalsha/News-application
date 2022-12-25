@@ -9,7 +9,7 @@
   <a v-bind:href="url" target="_blank">See more</a>
 </div>
 </template>
-
+ 
 <script>
 export default {
     name:'ArticleCard',
@@ -47,8 +47,7 @@ export default {
   text-align: center;
   justify-content: center;
   place-items: center;
-  position: absolute;
-    overflow-y: scroll;
+  margin: auto;
 }
 
 .box h3{
@@ -62,5 +61,8 @@ export default {
     text-align: justify;
     font-family: 'Quicksand', sans-serif;
     
+}
+.box h3{
+    color: #4e3c36;
 }
 </style>
