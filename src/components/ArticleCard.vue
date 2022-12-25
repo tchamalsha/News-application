@@ -47,8 +47,7 @@ export default {
   text-align: center;
   justify-content: center;
   place-items: center;
-  position: absolute;
-    overflow-y: scroll;
+  margin: auto;
 }
 
 .box h3{

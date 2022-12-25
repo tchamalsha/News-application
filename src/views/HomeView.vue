@@ -12,7 +12,14 @@
     </form>
     <h1>Headlines</h1>
     <hr>
-    <div class="row mt-3">
+
+    <div v-if="loading" class="d-flex justify-content-center">
+      <!-- Loading animation -->
+      <div class="spinner-border " role="status">
+      </div>
+    </div>
+
+    <div v-else class="row mt-3">
         <NewsCard
             v-for="news in allNewsObjects" 
                 :key="news.id"
@@ -42,18 +49,20 @@ import NewsService from "../service/NewsService"
     data(){
         return{
             allNewsObjects :[],
-            searchTerm: ''
+            searchTerm: '',
+            loading: false,
         }
     }
    ,
     async mounted(){
-        
+        this.loading = true;
         NewsService.getNews().then(res => {
             this.allNewsObjects = res.articles
             console.log(res);
         }).catch(err => {
             console.log(err);
         })
+        this.loading = false;
     },
     methods:{
         search(){

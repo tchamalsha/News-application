@@ -4,8 +4,9 @@
       <hr>
       <div class="row mt-3">
           <ListCard 
-            v-for="item in list" 
+            v-for="item,index in list" 
                 :key="item.id"
+                :id=index+1
                 :title="item" />
       </div>
     </div>

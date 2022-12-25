@@ -2,6 +2,13 @@
   <div class="conatiner p-3">
     <h1>Top Sources</h1>
     <hr>
+
+    <div v-if="loading" class="d-flex justify-content-center">
+      <!-- Loading animation -->
+      <div class="spinner-border " role="status">
+      </div>
+    </div>
+
     <div class="row mt-3">
         <SourceCard
             v-for="news in allNewsObjects" 
@@ -25,14 +32,14 @@ export default {
 
     data(){
         return{
-            allNewsObjects :[]
+            allNewsObjects :[],
+            loading:false
         }
     }
    ,
     async mounted(){
-        // let result = await NewsService.getNews()
-        // console.log(result.data)
-        // this.allNewsObjects = result.data.articles
+        
+        this.loading=true
         NewsService.getNewsSources()
         .then(res => {
             this.allNewsObjects = res.sources
@@ -40,6 +47,7 @@ export default {
         }).catch(err => {
             console.log(err);
         })
+        this.loading=false
     }
     
 

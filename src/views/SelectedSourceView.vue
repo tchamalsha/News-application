@@ -5,7 +5,10 @@
       <div class="row mt-3">
         <div v-if="!allNewsObjects.length">
             <!-- Element to be rendered if data is null -->
-            <p>Data is not available.</p>
+            <div >
+                <img src="../assets/undraw_page_not_found_re_e9o6.svg" alt="Paris" class="center" >
+                <p>No data available</p>
+            </div>
         </div>
           <NewsCard
 
@@ -64,4 +67,15 @@
   <style>
   @import '../assets/main.css';
 
+  .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+p{
+    text-align: center;
+    font-size: 1.5rem;
+    color: darkgrey;
+}
 </style>

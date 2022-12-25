@@ -1,8 +1,8 @@
 <template>
   <div class="container d-flex justify-content-center">
-    <div class="row box col-md-10 align-items-center d-flex">
+    <div class="row box col-md-10 align-items-center d-flex m-2">
         <div class="col-2 number justify-content-center d-flex">
-            <p>1</p>
+            <p>{{id}}</p>
         </div>
         <div class="col-10">
             <p>{{title}}</p>
