@@ -1,11 +1,12 @@
 <template>
     <div class="conatiner p-3">
       <h1>Recently Visited News</h1>
+      <hr>
       <div class="row mt-3">
           <ListCard 
             v-for="item in list" 
                 :key="item.id"
-                :title="item.title" />
+                :title="item" />
       </div>
     </div>
     
@@ -22,20 +23,21 @@ export default {
       list: []
     }
   },
-  methods: {
-    loadList() {
+  mounted() {
+    
       // Load the list from the local storage
-      const list = localStorage.getItem('list');
-      if (list) {
-        this.list = JSON.parse(list);
+      const jsonList = localStorage.getItem('items');
+    
+      if (jsonList) {
+        this.list = JSON.parse(jsonList);
+
       }
-      console.log(this.list);
+
     }
-  }
 
 }
 </script>
 
 <style>
-
+@import '../assets/main.css';
 </style>

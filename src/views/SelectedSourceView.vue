@@ -1,8 +1,14 @@
 <template>
     <div class="conatiner p-3">
       <h1>Headlines From {{ selectedSource.name }} </h1>
+      <hr>
       <div class="row mt-3">
+        <div v-if="!allNewsObjects.length">
+            <!-- Element to be rendered if data is null -->
+            <p>Data is not available.</p>
+        </div>
           <NewsCard
+
               v-for="news in allNewsObjects" 
                   :key="news.id"
                   :id="news.id"
@@ -45,8 +51,8 @@
       async mounted(){
           NewsService.getNews()
           .then(res => {
-            console.log(res.articles)
-              this.allNewsObjects = res.articles.filter(item => item.source.name === "The Guardian");
+              console.log(res.articles)
+              this.allNewsObjects = res.articles.filter(item => item.source.name === this.selectedSource.name);
               console.log(this.allNewsObjects);
           }).catch(err => {
               console.log(err);
@@ -54,3 +60,8 @@
       }
    }
   </script>
+
+  <style>
+  @import '../assets/main.css';
+
+</style>

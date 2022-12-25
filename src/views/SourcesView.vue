@@ -1,6 +1,7 @@
 <template>
   <div class="conatiner p-3">
     <h1>Top Sources</h1>
+    <hr>
     <div class="row mt-3">
         <SourceCard
             v-for="news in allNewsObjects" 
@@ -46,5 +47,5 @@ export default {
 </script>
 
 <style>
-
+@import '../assets/main.css';
 </style>

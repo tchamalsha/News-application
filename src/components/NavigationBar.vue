@@ -45,8 +45,10 @@ a{
 .nav-link {
   text-decoration: none !important;
 }
-.navbar a .nav-brand{
-  color: #A555EC;
+.navbar .navbar-brand{
+  color: #4e3c36;
+  font-weight: 1000;
+  font-family: 'Karla', sans-serif;
 }
 
 </style>

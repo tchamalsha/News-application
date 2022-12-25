@@ -11,6 +11,7 @@
         </ul> 
     </form>
     <h1>Headlines</h1>
+    <hr>
     <div class="row mt-3">
         <NewsCard
             v-for="news in allNewsObjects" 
@@ -57,7 +58,7 @@ import NewsService from "../service/NewsService"
     methods:{
         search(){
             NewsService.getSearchedNews(this.searchTerm).then(res => {
-                this.$router.push({ path: '/source', query: { term: this.searchTerm } });
+              this.allNewsObjects = res.articles
             }).catch(err => {
                 console.log(err);
             })
@@ -67,6 +68,8 @@ import NewsService from "../service/NewsService"
 </script>
 
 <style scoped>
+@import '../assets/main.css';
+
 form {
 	margin: 50px;
 }

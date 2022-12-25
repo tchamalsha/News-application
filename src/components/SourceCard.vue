@@ -48,6 +48,6 @@
   }
   
   .card .card-title{
-      color: blueviolet;
+    color: #4e3c36;
   }
   </style>
