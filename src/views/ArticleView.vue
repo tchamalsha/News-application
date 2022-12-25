@@ -2,7 +2,7 @@
 
 <div class="article ">
     <div class="row justify-content-center">
-        <ArticleCard :title="title"/>
+        <ArticleCard :title="selectedArticle.title"/>
     </div>
     
 </div>
@@ -18,14 +18,15 @@ export default {
     data() {
         return {
             imageUrl: null,
-            articleSet:[]
+            selectedArticle:[]
         };
     },
-    async mounted() {
-        // fetch the image URL from an API
-        
-        console.log(this.$route.params.object);
-    },
+    computed: {
+    selectedArticle() {     
+      this.selectedArticle= this.$route.params.selectedArticle;
+      console.log(this.selectedArticle);
+    }
+  },
     components: { ArticleCard },
     
 }
