@@ -2,10 +2,18 @@
   <div class="conatiner p-3">
     <h1>Headlines</h1>
     <div class="row mt-3">
-        <NewsCard/>
-        <NewsCard/>
-        <NewsCard/>
-        <NewsCard/>
+        <NewsCard
+            v-for="news in allNewsObjects" 
+                :key="news.id"
+                :id="news.id"
+                :date="news.publishedAt"
+                :title="news.title" 
+                :author="news.author"
+                :description="news.description"
+                :content="news.content"
+                :imageUrl="news.urlToImage"
+                :url="news.url"
+        />
     </div>
   </div>
   
@@ -13,11 +21,29 @@
 
 <script>
  import NewsCard from "../components/NewsCard.vue";
-
+import NewsService from "../service/NewsService"
  export default{
     name:'HomeView',
     components:{
         NewsCard
+    },
+
+    data(){
+        return{
+            allNewsObjects :[]
+        }
+    }
+   ,
+    async mounted(){
+        // let result = await NewsService.getNews()
+        // console.log(result.data)
+        // this.allNewsObjects = result.data.articles
+        NewsService.getNews().then(res => {
+            this.allNewsObjects = res.articles
+            console.log(res);
+        }).catch(err => {
+            console.log(err);
+        })
     }
  }
 </script>
