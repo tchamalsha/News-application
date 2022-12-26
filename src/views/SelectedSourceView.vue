@@ -6,7 +6,7 @@
         <div v-if="!allNewsObjects.length">
             <!-- Element to be rendered if data is null -->
             <div >
-                <img src="../assets/undraw_page_not_found_re_e9o6.svg" alt="Paris" class="center" >
+                <img src="../assets/img/empty.svg" alt="Paris" class="center" >
                 <p>No data available</p>
             </div>
         </div>
@@ -28,7 +28,7 @@
     
   </template>
   
-  <script>
+  <script >
   import NewsCard from "../components/NewsCard.vue";
   import NewsService from "../service/NewsService"
    export default{
@@ -64,7 +64,7 @@
    }
   </script>
 
-  <style>
+  <style scoped>
   @import '../assets/main.css';
 
   .center {

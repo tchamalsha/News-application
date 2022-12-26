@@ -35,7 +35,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 /* Scroll down for CSS Grid rules */
 
 .body {
@@ -51,6 +51,10 @@ export default {
   margin-top: 5px;
 }
 
-
+.article {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
 
 </style>
