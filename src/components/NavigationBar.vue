@@ -16,10 +16,12 @@
           <router-link to="/recently-visited" :style="{ textDecoration: 'none' }"><a class="nav-link" >Recently Visited</a></router-link>
         </li>
         
-          <li class="nav-item" >
-            <router-link to="/sources" :style="{ textDecoration: 'none' }"><a class="nav-link" >Sources</a></router-link>
+        <li class="nav-item home" >
+          <router-link to="/sources" :style="{ textDecoration: 'none' }"><a class="nav-link" >Sources</a></router-link>
+        </li>
+        <li class="nav-item" >
+            <router-link to="/error" :style="{ textDecoration: 'none' }"><a class="nav-link" >Api Key</a></router-link>
           </li>
-        
         
       </ul>
     </div>
