@@ -1,6 +1,6 @@
 # News application
 
-This application shows the latest news fetched from an API.
+This news Application shows the latest news fetched from an API.
 
 ## Recommended IDE Setup
 
